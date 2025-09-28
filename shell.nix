@@ -7,6 +7,8 @@ with import <nixpkgs> {}; mkShell rec {
   ] ++ (with pkgs.python312Packages; [
     python
     venvShellHook
+    pip
+    setuptools
   ]);
   venvDir = ".venv";
   LD_LIBRARY_PATH = "${lib.makeLibraryPath packages}:/run/opengl-driver/lib";
